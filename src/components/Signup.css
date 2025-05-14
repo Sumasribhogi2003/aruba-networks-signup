@@ -1,0 +1,141 @@
+/* Fullscreen layout and font setup */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Container to center the signup form and apply background */
+.signup-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('/src//components/1.gif') no-repeat center center/cover; /* Background image */
+  padding: 40px;
+}
+
+/* Glassmorphism style for the signup form */
+.signup-form {
+  background: rgba(255, 255, 255, 0.15); /* Semi-transparent background */
+  border-radius: 16px; /* Rounded corners */
+  padding: 30px;
+  max-width: 400px; /* Max width of form */
+  width: 100%;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* Soft shadow */
+  backdrop-filter: blur(10px); /* Glass blur effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.18); /* Border to enhance glass look */
+  color: #fff;
+}
+
+/* Center and style the heading inside the form */
+.signup-form h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+/* Style each input group (label + input) */
+.form-group {
+  margin-bottom: 15px;
+}
+
+/* Style the labels */
+.form-group label {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #fff;
+  display: block; /* Ensures margin works */
+}
+
+/* Style the input fields */
+.form-group input {
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  outline: none;
+  background: rgba(255, 255, 255, 0.2); /* Light background for contrast */
+  color: #f2f1f1; /* Text color in input */
+}
+
+/* Highlight input border if there's an error */
+.input-error {
+  border: 2px solid #fefcfc;
+}
+
+/* Style for error message below inputs */
+.error {
+  color: #fefcfc;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+/* Submit button styling */
+.submit-button {
+  padding: 12px;
+  background-color: #ffffff;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin-top: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Hover effect for submit button */
+.submit-button:hover {
+  background-color: #f1f1f1;
+  transform: scale(1.05); /* Slight zoom */
+  box-shadow: 0 6px 15px rgba(244, 243, 243, 0.6); /* Highlighted shadow */
+}
+
+/* Center the submit button */
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Popup notification styling */
+.popup {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffffff;
+  color: #000;
+  padding: 12px 24px;
+  border: 1px solid #444;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  font-weight: 500;
+  z-index: 1000; /* Ensures it's above other elements */
+  animation: fadeInOut 2s ease-in-out; /* Smooth entrance/exit */
+}
+
+/* Animation for popup (fade and slide up) */
+@keyframes fadeInOut {
+  0% { opacity: 0; top: 0px; }
+  10% { opacity: 1; top: 20px; }
+  90% { opacity: 1; top: 20px; }
+  100% { opacity: 0; top: 0px; }
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 480px) {
+  .signup-form {
+    padding: 20px; /* Reduce padding */
+  }
+
+  .submit-button {
+    font-size: 16px;
+    padding: 10px; /* Reduce button size */
+  }
+}
